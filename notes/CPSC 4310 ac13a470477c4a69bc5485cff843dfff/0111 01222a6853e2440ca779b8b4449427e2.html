@@ -1,0 +1,718 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>0111</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="01222a68-53e2-440c-a779-b8b4449427e2" class="page sans"><header><h1 class="page-title">0111</h1></header><div class="page-body"><p id="f9a89a57-2a0b-49b7-8560-a5b62a010a8f" class=""><strong>Datamining applications</strong><div class="indented"><p id="d219914a-dacc-4873-a823-4b64cbceb7c7" class="">Recommendations</p><p id="ecd4515f-c800-49ea-b9a9-27c119106340" class="">Clustering</p><p id="5cfee028-0518-4eba-90ec-dc2aadbececb" class="">
+</p></div></p><h1 id="84865529-020f-42c4-b23d-9a64b4f1361d" class="">Data mining process</h1><div id="4708ec17-bfe1-444d-9c9c-941bcdd0501d" class="column-list"><div id="a9ae42c5-6b1f-4549-94f1-d989937af8fd" style="width:50%" class="column"><figure id="a20cfc54-d670-4ba1-b0ad-9115d82c7a1d" class="image" style="text-align:left"><a href="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_1.49.03_AM.png"><img style="width:336px" src="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_1.49.03_AM.png"/></a></figure><figure id="5b79c490-1f7f-4003-bf14-275c5fe59637" class="image" style="text-align:left"><a href="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_1.49.17_AM.png"><img style="width:336px" src="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_1.49.17_AM.png"/></a></figure><p id="ce9adfce-0722-4ae8-852d-53c009cb435f" class="">
+</p></div><div id="add6f333-4ed8-42db-9e20-69b9ad38e5e4" style="width:50%" class="column"><p id="91f01193-6bbc-42b9-8b31-5886e83cfc48" class="">
+</p><p id="f4e72dab-c28d-4b0a-b322-f3576bbc54e2" class=""><strong>Database from different sources</strong><div class="indented"><p id="0a2cdff1-97c4-41b0-b9ca-bbb674eff128" class="">Previous data &amp; knowledge</p><p id="dfc17a4e-783a-4499-8cd0-507bc2b1e5c8" class="">
+</p></div></p><p id="d7ff4e8c-b4b0-498b-8adb-f39705b0acac" class=""><strong>Data Cleaning→</strong><div class="indented"><p id="64f736b4-c886-4aa3-95ed-3eb93d14992e" class="">Data preprocessing<div class="indented"><p id="64a42671-6bb0-4be5-9cdf-1f660ad56c16" class="">Delete unimportant attributes</p><p id="bd8ed526-db36-43c8-a4c6-26bad840a026" class="">Change numeric data to Symbolic data</p></div></p><p id="95a20837-b742-4150-87f8-c5d04f79b52e" class="">
+</p></div></p><p id="b519cc71-e999-43b0-8e49-5d51fa0bd659" class=""><strong>Data warehouse→</strong></p><p id="ec13bdf1-d278-4081-8840-c4bed92b0aa9" class="">Ex: Oracle, MS SQL Server, IBM DB2<div class="indented"><p id="fe8e1491-22cc-406b-bdd4-e48d17365345" class="">
+</p><p id="62c3e48f-0c80-4c0b-8260-618b87254ea4" class="">
+</p></div></p><p id="43f8de8f-a711-4a2f-a147-bbe1434b8c8e" class=""><strong>Select task-relevant data→</strong><div class="indented"><p id="cf589c2f-d5ef-455a-83b1-580b8edf8d06" class="">
+</p></div></p><p id="095156c9-9362-44c0-b1fe-8fc5f557f209" class="">
+</p><p id="b0706565-886e-43e1-a15b-982ccbdbebe3" class=""><strong>Function choosing DM algorithm→</strong><div class="indented"><p id="19e6c065-5778-4e34-91d5-f1721c32e132" class="">Summarization</p><p id="a618670d-4f01-4c22-a7cf-deba1ac6cc63" class="">Classification for prediction</p><p id="ccf17ae3-4d7d-434b-967a-e7a2357df8c7" class="">Regression(Regressional Analysis)</p><p id="e7f35724-b31e-4bf6-b113-a851ecf2c125" class="">Association</p><p id="413b04de-4023-48a6-8d7b-bc149a27acc8" class="">Clustering<div class="indented"><figure id="047b49ef-7532-431d-929a-3b175876e3e7" class="image"><a href="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_1.56.02_AM.png"><img style="width:192px" src="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_1.56.02_AM.png"/></a></figure></div></p><p id="0ebe9350-0508-4559-8df2-b20975d84d1b" class="">
+</p></div></p><p id="cede3d76-c9c9-4220-b970-130e5dc1f26d" class=""><strong>DM process→</strong><div class="indented"><p id="a2adf413-dfe2-4cf3-bc28-0e7c5eb3ddc8" class="">Search for interesting patterns</p></div></p><p id="4306e536-e7ee-4a04-ac91-2845913a8478" class="">
+</p><p id="19733083-2f3a-4355-bc59-6d4ee337de26" class="">
+</p><p id="bf9d1736-debc-473a-85bf-f5d2ca18045b" class=""><strong>Pattern evaluation→</strong><div class="indented"><p id="806c7bed-935f-4e61-b564-4117d58d0081" class="">Visual patterns</p><p id="26943954-c817-426b-8b57-c6db3cca1df0" class="">Remove redundant patterns</p><p id="1a8d5678-ac1b-4c62-954b-0d457a8c83d6" class="">Transform Patterns</p></div></p><p id="e196fc17-e170-49ef-b279-8b54f720893b" class="">
+</p><p id="5ff748b2-608f-48f2-bba4-a0d22a0a0497" class="">
+</p><p id="10346b07-cca9-4215-bebb-ade7b3688204" class="">
+</p><p id="3cf2622f-49ff-4dd6-846a-5d76977fcb10" class="">
+</p><p id="76d38f98-0d26-4bd7-a324-cbf6e473bf9f" class=""><strong>Use knowledge for making business decision→</strong></p><p id="d9347680-363d-4791-9abc-c388e2b11e83" class="">
+</p><p id="cde19d2c-8dd7-4810-9d51-b94ccbd1a7da" class="">
+</p><p id="0aea614d-903a-4658-83d5-9e4f60a779b9" class="">
+</p><p id="76e7108b-e3e9-433c-8e60-61f0125dcf78" class="">
+</p><p id="4beee20c-46ae-4294-9d09-205dc76cf8e8" class="">
+</p><p id="e7082e3b-3e6d-4f02-b8ee-082d01de3bb5" class="">
+</p><p id="fd1807e0-feb7-4f71-b1bd-78122647229f" class="">
+</p><p id="15d1d497-8f7e-4567-bdeb-71208d1db4bb" class="">
+</p><p id="9d06dbf6-67de-43d1-b41c-57c9b61f86dc" class="">
+</p><p id="264a41df-1355-4d82-a1c1-08bcb599cc12" class="">
+</p><p id="3841f471-7556-49a4-8e49-1147eeae7820" class="">
+</p></div></div><h1 id="dc0118b1-692a-445a-b333-ebd13dd1f6f9" class="">Different Data formats for DM</h1><p id="867b8c60-b0aa-4715-98a6-471aa871f77e" class="">
+</p><p id="11946434-e58f-4ee0-bc90-2eeb173ca109" class=""><strong>Data from relational DB</strong><div class="indented"><table id="2d379503-06c8-4bf3-934e-d81800e629b6" class="simple-table"><tbody><tr id="301fb98a-f5ab-4520-906e-af1e33db295d"><td id="yF;[" class="" style="width:35px">a1</td><td id="IUPH" class="" style="width:41.9886360168457px">a2</td><td id="?hYg" class="" style="width:39px">a3</td><td id="AtUe" class="" style="width:36px">…</td><td id="WgGf" class="" style="width:35px">an</td></tr><tr id="f1b5537e-3dde-49ee-821e-2436b1aca614"><td id="yF;[" class="" style="width:35px"></td><td id="IUPH" class="" style="width:41.9886360168457px"></td><td id="?hYg" class="" style="width:39px"></td><td id="AtUe" class="" style="width:36px"></td><td id="WgGf" class="" style="width:35px"></td></tr><tr id="a7705611-8270-40af-87a0-60d826561fe0"><td id="yF;[" class="" style="width:35px"></td><td id="IUPH" class="" style="width:41.9886360168457px"></td><td id="?hYg" class="" style="width:39px"></td><td id="AtUe" class="" style="width:36px"></td><td id="WgGf" class="" style="width:35px"></td></tr></tbody></table><p id="25081a2c-c4ac-4e04-bb56-7e5a70a03ab3" class="">
+</p></div></p><p id="d4b0cc62-8170-4e56-9603-09514fbeb16c" class=""><strong>Data from the data warehouse</strong><div class="indented"><ul id="ee2e70fc-95ff-4701-873a-1b556749a836" class="bulleted-list"><li style="list-style-type:disc">from different sources</li></ul><ul id="c1e5b924-2ff7-4a55-aa51-3ae4829c727a" class="bulleted-list"><li style="list-style-type:disc">Integrate data</li></ul><p id="546eab71-30b7-4412-b37a-796183384ba6" class="">
+</p></div></p><p id="04199dbf-f20f-4e79-aa10-8e0c49aa8550" class=""><strong>Data from transactional DB</strong><div class="indented"><p id="35a6d4cf-9e93-48d8-9bdc-b79c93b85276" class="">Used in supermarkets, Ex: Walmart</p><p id="dfd5c122-dc26-46bf-9268-30bc5901b1f5" class="">                                   association             sequential</p><table id="01dab0aa-b4b2-416d-93dd-364595ce81aa" class="simple-table"><tbody><tr id="44e4b1ad-4bff-4555-b0f1-0bb4c3d8f389"><td id="taTG" class="">TID</td><td id="|Sn|" class="">items</td><td id="guIA" class="">time</td></tr><tr id="422473e7-5b96-4a13-884a-d9697ca9cb13"><td id="taTG" class="">1234</td><td id="|Sn|" class="">apple, milk, …</td><td id="guIA" class="">…</td></tr><tr id="5404d79c-2368-4a7b-9ef8-55c041c1ac3a"><td id="taTG" class=""></td><td id="|Sn|" class=""></td><td id="guIA" class=""></td></tr></tbody></table></div></p><p id="24fde0fd-4bca-408b-b982-a4d311f99fac" class=""><strong>Datastream data</strong><div class="indented"><p id="22bff3a5-0d8a-4d76-a80f-e653f3be1003" class=""><strong>Streamlined data</strong></p><p id="b916271d-b432-4ce0-9ab3-b4c054c57161" class="">Ex: sensor data from security cameras</p><p id="4fae621b-f5fd-4c83-aac9-24c34f1ae67b" class="">                                         window…</p><table id="ad95e031-7ba1-4adf-9ce3-2ec06b9ad6a7" class="simple-table"><tbody><tr id="7ea4e020-f0a3-4071-8d9f-521892a7436c"><td id="?Ien" class="">……………………….</td><td id="zaIu" class=""><span style="border-bottom:0.05em solid"><strong>……………………….</strong></span></td><td id="crAr" class="">……………………….</td></tr></tbody></table><p id="e5b9f4ae-9d30-41f9-b189-92161232efec" class="">
+</p><p id="d64fc3e9-2d64-4a28-b654-2b7043ef5ee6" class=""><strong>Time-series &amp; temporal data</strong><div class="indented"><p id="08bcd980-c7af-47b9-97be-c56e4908fd5f" class="">Data are time sensitive</p></div></p><p id="865a43f1-151d-4a46-a891-f6141b242749" class="">
+</p><p id="58855673-1879-4007-a1ed-7466a60a8510" class=""><strong>Structural Data &amp; Graph data</strong><div class="indented"><figure id="88f7d94d-01a8-4389-a960-bb9e0a23dcc4" class="image"><a href="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.03.30_AM.png"><img style="width:336px" src="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.03.30_AM.png"/></a></figure></div></p><p id="fdd4efa7-d357-403b-890a-eaf3b7275705" class="">
+</p><p id="3859cbe7-b8ab-4ffd-aa26-db2db599082b" class=""><strong>Spatial data</strong><div class="indented"><p id="4cf227a3-a61c-498f-8f93-4cbc44ae53bf" class="">Geographic data</p><p id="51c68e35-73bf-48bc-917c-0b8f00e809dc" class="">Maps</p><p id="cf1c7c0b-0df0-4952-b3f0-18aa7dc38af7" class="">
+</p></div></p><p id="f2af4591-f333-4132-8336-dbf2e2455bb5" class=""><strong>Multimedia data</strong><div class="indented"><p id="aaaefeba-b60e-4216-aa3d-ef6b732d79bf" class="">Video</p><p id="92335d5e-f6a7-4b06-9835-20936cb421a0" class="">Audio ← speech recognition</p><p id="46f44637-7b30-414a-8a57-3f48ae30dc10" class="">Pictures ← Alpha-go NN</p><p id="65a38129-90cb-4bdf-a9c0-55cb2fe7915e" class="">
+</p></div></p><p id="03cc33ef-fa4d-4901-b0ba-ef86aba68058" class=""><strong>Text database</strong><div class="indented"><p id="d49b8432-98ad-4394-bb6f-bc987a4ccf42" class="">Textual documents</p></div></p></div></p><p id="da0b2e32-a54a-4761-9961-83437a342d80" class="">
+</p><p id="bf8d405b-f47c-48ab-9b32-ab87d3abd4b8" class="">
+</p><h1 id="199be56b-6f15-48d1-8a30-1b68e368a287" class="">Datamining tasks</h1><p id="64ce7542-7520-4b35-98bd-7ac18962d705" class=""><div class="indented"><p id="9cb6bed1-2c60-43b5-9958-2006ce3574fb" class=""><strong>Characteristic &amp; Discrimination</strong>             Statistical analysis<div class="indented"><p id="e70b09c9-db01-4e7b-a472-5bfa83d9058c" class="">Rules of data</p><p id="b62ac9b2-71b0-4b11-92bb-e31d838292b0" class="">Given data, <div class="indented"><p id="27dc6a76-35c8-4127-b10c-b101671e4584" class="">generalize </p><p id="54dbbc31-ab0e-4f1b-8deb-cae611a59e50" class="">summarize                  a target attribute</p><p id="534937de-9ed2-48b8-9df9-d3b9f0b539aa" class="">contrast</p></div></p><p id="51212c2f-19e9-4824-8431-4542902b36a3" class="">
+</p><table id="46f1dd25-6d87-4144-8b46-583f095db931" class="simple-table"><tbody><tr id="d49793c2-9ca1-4e49-baf8-159c2a0f0422"><td id="Xk^?" class="">ranks</td><td id="Htkt" class="">country</td><td id="uBeM" class="">edu/background</td><td id="U@yU" class=""># of students</td></tr><tr id="2952ec2a-8dc8-405d-9241-7d5bd3d2c790"><td id="Xk^?" class="">prof</td><td id="Htkt" class="">canada</td><td id="uBeM" class=""></td><td id="U@yU" class=""></td></tr><tr id="d87844a8-3f30-47b4-9b4c-663d7f9b742c"><td id="Xk^?" class="">assn</td><td id="Htkt" class="">foreign</td><td id="uBeM" class=""></td><td id="U@yU" class=""></td></tr><tr id="0a01f8ea-d9d8-4190-84a1-5b8e0aab763f"><td id="Xk^?" class="">prof</td><td id="Htkt" class="">foreign</td><td id="uBeM" class=""></td><td id="U@yU" class=""></td></tr><tr id="6254fcbc-63df-4a4c-9f13-6f1c6ca431f1"><td id="Xk^?" class="">assn</td><td id="Htkt" class="">canada</td><td id="uBeM" class=""></td><td id="U@yU" class=""></td></tr><tr id="ca002fc8-141b-41ab-826a-e7cbaeaa9b65"><td id="Xk^?" class="">prof</td><td id="Htkt" class="">…</td><td id="uBeM" class=""></td><td id="U@yU" class=""></td></tr><tr id="32cc6c06-0630-4d88-a063-6bdc83cd4606"><td id="Xk^?" class="">prof</td><td id="Htkt" class="">…</td><td id="uBeM" class=""></td><td id="U@yU" class=""></td></tr></tbody></table><p id="13453006-6f0d-4530-b8f0-2977a787eaba" class="">prof → canada &amp; Ph.D.</p><p id="fc094533-4fee-4a0a-a58b-b576fd8b3d1d" class="">                 70%       60%</p><p id="5668fdf6-5d7e-4a2f-9cef-b677a86e334b" class="">Association → …</p><p id="6fb7afaf-4ae5-40ad-a2fa-1984c1311982" class="">
+</p></div></p><p id="a7108926-dedf-47c6-9242-b971435b3a12" class=""><strong>Association pattern, frequent patterns, correlation &amp; causality</strong><div class="indented"><p id="47af2f25-2453-4741-ac07-2d904b3c8f45" class="">Ex: In the supermarket<div class="indented"><p id="c94acb7b-eaaa-46a6-9e9c-930e4b591751" class="">Diaper → Beer 5%  support  &amp;  confidence</p></div></p><p id="7e7bed49-578c-41f4-bafa-c41176bf4251" class="">Ex: Longest patterns<div class="indented"><p id="2d2a3c1f-def0-49a5-a8d0-a0c54254b148" class="">Person1. <span style="border-bottom:0.05em solid">P1</span> P2 <span style="border-bottom:0.05em solid">P3</span> <span style="border-bottom:0.05em solid">P4</span></p><p id="311597b9-9aaa-48ed-a4ee-d48bacb2b9de" class="">Person2 <span style="border-bottom:0.05em solid">P1</span> <span style="border-bottom:0.05em solid">P3</span> <span style="border-bottom:0.05em solid">P4</span>                          Longest pattern mining…</p></div></p><p id="a81a1b4c-a5b8-4aa2-8f1a-b2c391780e33" class="">
+</p><figure id="6bfc420d-dfd0-4502-b99d-1b4d513e81b8" class="image"><a href="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.09.17_AM.png"><img style="width:384px" src="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.09.17_AM.png"/></a></figure></div></p><p id="9dd95e1a-67e7-44c8-b07a-74c0d545fe88" class="">
+</p><p id="048ebf23-d25a-4fe4-bb4e-ca3bf11b994d" class=""><strong>Classification </strong><div class="indented"><p id="a5abfe36-e243-42fc-bde1-5def54e1dda4" class="">Ex: Weather report                                              Decision tree…<div class="indented"><table id="85a40548-dbf9-4e39-a6bb-76945967af74" class="simple-table"><tbody><tr id="5b22d769-6423-41e7-bfdd-b9edee8152a3"><td id="XM=Z" class=""></td><td id="Dqk}" class="" style="width:52.109375px">temp</td><td id="~_WB" class="" style="width:49.46875px">wind</td><td id="SP&gt;f" class="" style="width:74.59375px">humidity</td><td id="OP&gt;X" class="" style="width:61.09375px">terrain</td><td id="oF_Q" class="" style="width:30.125px">…</td><td id="~R{u" class="" style="width:50.125px">rain?</td><td id="@xCw" class=""></td></tr><tr id="6055c6ee-71a3-4e60-8b47-903c7674de14"><td id="XM=Z" class="">D1</td><td id="Dqk}" class="" style="width:52.109375px"></td><td id="~_WB" class="" style="width:49.46875px"></td><td id="SP&gt;f" class="" style="width:74.59375px"></td><td id="OP&gt;X" class="" style="width:61.09375px"></td><td id="oF_Q" class="" style="width:30.125px"></td><td id="~R{u" class="" style="width:50.125px">yes</td><td id="@xCw" class="">← record</td></tr><tr id="d00fc699-aee9-4fac-8c01-0e22fefb77b6"><td id="XM=Z" class="">D2</td><td id="Dqk}" class="" style="width:52.109375px"></td><td id="~_WB" class="" style="width:49.46875px"></td><td id="SP&gt;f" class="" style="width:74.59375px"></td><td id="OP&gt;X" class="" style="width:61.09375px"></td><td id="oF_Q" class="" style="width:30.125px"></td><td id="~R{u" class="" style="width:50.125px">no</td><td id="@xCw" class="">← point</td></tr><tr id="caf5bb75-1a8e-4316-ab88-8ba29d6ab2ca"><td id="XM=Z" class=""></td><td id="Dqk}" class="" style="width:52.109375px"></td><td id="~_WB" class="" style="width:49.46875px"></td><td id="SP&gt;f" class="" style="width:74.59375px"></td><td id="OP&gt;X" class="" style="width:61.09375px"></td><td id="oF_Q" class="" style="width:30.125px"></td><td id="~R{u" class="" style="width:50.125px">no</td><td id="@xCw" class=""></td></tr></tbody></table><p id="d6c403f9-7be9-404d-bcef-ee31213f372c" class="">New day: temp, wind → rain??</p><p id="60f8089a-da41-469d-aeae-4600632eeb64" class="">
+</p></div></p><p id="9c15d1fa-bab6-421d-b470-5609cec056c8" class=""><strong>Classification model: Decision tree, Support Vector Machine(SVM), NN, …</strong><div class="indented"><p id="8bb2d401-484a-4de1-a7fd-44ebddfefaeb" class="">Describe &amp; summarize Classes or Concepts</p><p id="c687fb67-e79b-4806-a442-66c28960e9e2" class="">Given a new data point, predict which class it belongs to</p><p id="5401bd55-5b03-44cf-b3f2-684b87f3f9a5" class="">
+</p></div></p></div></p></div></p><p id="615398b0-c8dd-42a9-892d-548d4d5dd998" class=""><strong>Clustering analysis (DBscan, k-means, k-medoids)</strong><div class="indented"><p id="13ad210e-e850-4cd3-958b-ab2c7beda7da" class="">Given a group of unknown data points, group them into clusters</p><figure id="f5a3f5f4-3ce8-4b46-b081-b8e07373a960" class="image"><a href="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.11.43_AM.png"><img style="width:528px" src="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.11.43_AM.png"/></a></figure><p id="5e4b8eed-a423-429d-ac93-dbef244a47a1" class="">    Cluster families on their education, income, house price, etc…</p><p id="dd44e012-f1b7-41bc-ba47-0c761c0132f5" class="">
+</p><p id="ecde9328-28fe-416a-9817-04e1f44b9eee" class="">Maximize the similarity <div class="indented"><p id="86735351-a84c-49b7-9ffa-b8cdb11fc00a" class="">within a cluster</p></div></p><p id="80c7fcaf-ba83-48ee-8b15-1924b61ef9ed" class="">Minimize the similarity <div class="indented"><p id="daae9565-8f12-4a52-a2f2-bd4c3fbbd45d" class="">across the clusters</p></div></p><p id="aafb8620-0316-441a-8eac-850e7081fc63" class="">
+</p></div></p><p id="6c3ed592-9bde-41d7-81fc-08ee3a5c6cc3" class=""><strong>Outlier analysis</strong><div class="indented"><p id="08c81c87-f8af-4675-9b16-2110ed0b16bd" class="">Data points that are not consistent with the others(general behaviour)</p><figure id="106b694f-635e-4703-8871-7fdc41d13a2f" class="image"><a href="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.14.55_AM.png"><img style="width:624px" src="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.14.55_AM.png"/></a></figure><p id="5f2d57d7-50d5-40e5-8976-bc4e4c3cec66" class="">Noise: doesn’t represent anything</p><p id="d2b956e3-99dc-4e0a-a1a9-658897d6c181" class="">Outlier: represent something rare</p><p id="03d43b68-4441-48cd-8eeb-df75c998cd1f" class="">Ex: Use clustering</p><p id="7d451358-7d8d-4cf5-b1f1-0c0bc70aa1b7" class="">
+</p></div></p><p id="1fad7fc9-8b04-4b10-8dd7-652c04978943" class=""><strong>Trend &amp; evolution analysis</strong><div class="indented"><p id="07787b2f-eba6-4cfa-8e46-801168071c9d" class="">Regressional analysis</p><figure id="58aa66d4-86e0-4c75-b6d0-a60c3b49432f" class="image"><a href="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.16.11_AM.png"><img style="width:480px" src="0111%2001222a6853e2440ca779b8b4449427e2/Screenshot_2023-01-24_at_2.16.11_AM.png"/></a></figure><p id="cca76bb6-c25c-4145-ab0b-7310a005ebd0" class="">
+</p><p id="78a51919-c390-4a16-92b7-98829b9fabd8" class="">
+</p></div></p><p id="bc4fd256-b4f6-4c7e-a47c-c6920de0b69c" class=""><div class="indented"><p id="7532e9fd-3c22-4935-b9e9-26d1a23af0b8" class="">
+</p></div></p></div></article></body></html>

@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>0104</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="50d8302b-a4ac-4755-8417-73ce25418027" class="page sans"><header><h1 class="page-title">0104</h1></header><div class="page-body"><p id="217eafeb-a382-4097-b1b7-9e09d7b805c4" class="">4 assignments</p><p id="44d8029a-0184-4d68-892e-2450dc9713c1" class="">1 midterm</p><p id="7f965be3-22d0-4b50-a9cd-d7f2fbd9e0db" class="">1 project → Python + tensorflow + pyTorch</p><p id="cc64dcc0-3d60-453c-85ec-82d5b265cbd3" class="">1 final exam</p><p id="eeed6882-7f05-4512-beaf-4cd2a4e77fbb" class="">
+</p><h1 id="408bdfff-9803-4827-beb4-ff207e71ca78" class=""><strong>Topics</strong></h1><p id="f2a864fb-4169-4159-89ed-fc48e9a17465" class=""><strong>Intro to Datamining &amp; AI</strong></p><p id="bc6b1505-d562-4d54-9f17-4d8b650614b4" class="">
+</p><p id="d4063698-94ac-4a1b-b857-142b575573c9" class=""><strong>Data mining</strong></p><p id="b0eac668-eb43-4917-aa2c-82e790ac5f16" class="">
+</p><p id="13c0ec8b-5efc-40e0-ac71-a243b09b5099" class=""><strong>OLAP(OnLine Analytical Processing) &amp; Data warehousing</strong></p><p id="53e269fe-9f9b-46b2-95c6-a06a2a74d21b" class="">
+</p><p id="180bc1a6-0341-402b-8e2e-bd744c0e8ffc" class=""><strong>Data preprocessing </strong></p><p id="ceba54f7-dc37-4f02-a445-74ef99ffdf69" class="">→(input)→ DM algorithms →(output)→ Post-processing</p><figure id="59bbe330-725b-4ca4-b043-a17fab862c6b" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.03.01_AM.png"><img style="width:624px" src="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.03.01_AM.png"/></a></figure><p id="740075e2-48e4-4298-b8e4-dc624a6f8b4d" class="">
+</p><p id="50344395-c73c-4f9b-830a-1858f8b175a4" class=""><strong>Association mining</strong><div class="indented"><p id="c5d20da2-d2d8-45bd-8221-9d1faf0382d0" class="">Ex: DB - printers<div class="indented"><p id="212b8885-e010-4b3c-9fdc-32d097b4ec55" class="">PurchaseDB</p><table id="3fc2acd8-bc9e-4326-81d2-72bd5f61364d" class="simple-table"><tbody><tr id="08c53d7e-3586-4ecf-9f9c-680a16a61e88"><td id="RNb@" class="">CID</td><td id="bW[@" class="">Date of Purchase</td><td id="}sFb" class="">Products</td></tr><tr id="6dc84cc0-d5c8-4aea-b7ea-fd8124196873"><td id="RNb@" class="">12345</td><td id="bW[@" class="">Jan 1, 2023</td><td id="}sFb" class="">{HP printers, computers, …}</td></tr><tr id="323a41d5-0d38-4a17-ac45-82d8518ea0ab"><td id="RNb@" class=""></td><td id="bW[@" class=""></td><td id="}sFb" class=""></td></tr></tbody></table><p id="65390cb0-5323-4b5c-9f42-fe736c98dcd7" class="">Select CID from purchaseDB where “printer” in products</p><p id="f98e938b-91af-400c-a02e-06d3b13c0697" class="">{printer, ink}</p><p id="2f8cf0e2-01f6-4f5b-b1df-e5f02afb9873" class="">Select CID from purchaseDB where (“printer” in products) and (”ink” in products)</p></div></p><p id="d15794e4-4154-4739-a232-ef1a2c001f44" class="">Ex: # of customers who bought printers &amp; ink</p><p id="e9fb6eec-dda1-46ae-a465-f9cf2101d279" class="">Ex: {?, ?}<div class="indented"><p id="579b8906-28b7-4f0c-ae02-15ba05887810" class="">Report the product pair that were bought by customers for more than 90% of times</p></div></p><p id="6915f55d-0504-4f98-be5e-c3c3f9403b43" class="">Ex: {?, ?, ?}</p><figure id="cfe96888-ec73-445c-af88-11c56c008998" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.05.06_AM.png"><img style="width:480px" src="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.05.06_AM.png"/></a></figure></div></p><p id="7667ae02-5f1f-4b4a-a17f-f823a3e91a1f" class="">
+</p><p id="5857b399-1600-404d-ac86-9baaeca67a86" class=""><strong>Classification mining(Prediction)</strong><div class="indented"><p id="900c693a-fc05-41a1-bb7a-23e731ecc348" class="">Ex: <div class="indented"><table id="fe752942-05dc-4931-b314-f73582b45d0b" class="simple-table"><tbody><tr id="3e3d3d21-6886-4a7e-a9f1-2bf6407d9fab"><td id="Yec\" class="" style="width:104px"></td><td id="sA|O" class="" style="width:104px">Age</td><td id="jNlm" class="" style="width:104px">Edu</td><td id="Qddj" class="" style="width:104px">Salary</td><td id="~k]q" class="" style="width:104px"># of dep.</td><td id="fED@" class="" style="width:104px">Approval</td></tr><tr id="b0b08a29-2af8-4c24-9f74-23be7fe69e76"><td id="Yec\" class="" style="width:104px">P1</td><td id="sA|O" class="" style="width:104px"></td><td id="jNlm" class="" style="width:104px"></td><td id="Qddj" class="" style="width:104px"></td><td id="~k]q" class="" style="width:104px"></td><td id="fED@" class="" style="width:104px">Yes</td></tr><tr id="b9ae834b-df4a-4a5f-b113-3026775a8845"><td id="Yec\" class="" style="width:104px">P2</td><td id="sA|O" class="" style="width:104px"></td><td id="jNlm" class="" style="width:104px"></td><td id="Qddj" class="" style="width:104px"></td><td id="~k]q" class="" style="width:104px"></td><td id="fED@" class="" style="width:104px">No</td></tr><tr id="2dd9c430-bbc9-476a-a8fe-f011e4555849"><td id="Yec\" class="" style="width:104px">…</td><td id="sA|O" class="" style="width:104px"></td><td id="jNlm" class="" style="width:104px"></td><td id="Qddj" class="" style="width:104px"></td><td id="~k]q" class="" style="width:104px"></td><td id="fED@" class="" style="width:104px"></td></tr><tr id="a678b0d4-63d8-4d59-a9a9-daa3b92e8323"><td id="Yec\" class="" style="width:104px">Pn</td><td id="sA|O" class="" style="width:104px"></td><td id="jNlm" class="" style="width:104px"></td><td id="Qddj" class="" style="width:104px"></td><td id="~k]q" class="" style="width:104px"></td><td id="fED@" class="" style="width:104px"></td></tr></tbody></table></div></p><p id="02bf8760-690b-470b-9927-1d4ff8848477" class="">Decision tree<div class="indented"><p id="08cd4ee9-870b-4228-b3db-73d4c4d952e3" class="">Which attribute is the most important?</p><p id="8d3fd6aa-a2f5-4504-b4a0-0855eb309290" class="">
+</p></div></p></div></p><p id="936c542b-0133-4739-bf3b-697b2db21a04" class=""><strong>Clustering</strong><div class="indented"><p id="3d747b20-72a8-4c00-a1e4-d541ed61e4da" class="">Distance-based</p><figure id="da059eab-840c-431d-bf01-f853f7ab5611" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.06.54_AM.png"><img style="width:384px" src="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.06.54_AM.png"/></a></figure><p id="e73d0f6b-f624-421f-8e14-76887d958cae" class="">Density-based</p><figure id="2a597315-7121-45e1-a152-df23aeeaf2fc" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.07.01_AM.png"><img style="width:336px" src="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.07.01_AM.png"/></a></figure></div></p><p id="ee62c310-d054-42fc-a0cc-836e22508cd2" class="">
+</p><p id="7ebec344-c6b3-4131-9fdc-d4fe4f440159" class=""><strong>Neural Networks(NN)</strong><div class="indented"><p id="67ff1d1f-705d-41e5-b624-2b9a0db3570e" class="">Neuron</p><figure id="a89fda2f-dfef-41bc-9efe-3db4d0739f3a" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Untitled.png"><img style="width:288px" src="0104%2050d8302ba4ac4755841773ce25418027/Untitled.png"/></a></figure><p id="2a15783a-77ce-48ba-81ef-faa980b23200" class="">
+</p></div></p><p id="cb4d5565-06bf-4a26-8afb-b58dd5d22f9a" class=""><strong>Basic Neural Networks</strong><div class="indented"><p id="2afd66bc-11c9-4ba9-bb6c-15ec2faaa7e0" class="">Connect a set of neurons</p><figure id="f3801d48-0ab4-4c0a-9fed-8bc64a13d4a1" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Untitled%201.png"><img style="width:528px" src="0104%2050d8302ba4ac4755841773ce25418027/Untitled%201.png"/></a></figure><p id="df75ef82-c4b1-4efc-9f64-9559bb89b37c" class="">                   input layers                                                           output layers(calculated output)<div class="indented"><p id="21f2010a-8b1b-49a0-8590-00b301b47c84" class="">Learn from historical data = Machine Learning → Training process</p></div></p></div></p><figure id="552e6bac-18eb-431e-8351-050b874a1e2f" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.09.04_AM.png"><img style="width:1414px" src="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.09.04_AM.png"/></a></figure><p id="ef39304c-2a77-4b6f-a307-ff30a8edfc0c" class="">
+</p><p id="b54fa672-418f-40dc-9369-09c0bb0b3a02" class=""><strong>Backpropagation Neural Networks</strong><div class="indented"><p id="7db6d520-8e9c-4b09-b329-58931ec29575" class="">Neural Network Training(like feedback…) <div class="indented"><p id="20a0342a-87e0-4594-a7dd-16bbaaafc0a2" class="">In order to decide the weights, we go backwards</p><figure id="9cc897c1-164d-4372-8a80-8d7b8e6bcd4d" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.10.23_AM.png"><img style="width:288px" src="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.10.23_AM.png"/></a></figure></div></p><p id="6424ac02-598b-463e-855a-cbecc46db678" class="">Comparing Calculated outputs with Target outputs</p><p id="84a1deae-1d50-4d47-945b-5a32a4040373" class="">
+</p></div></p><p id="ab21d8ab-a0b6-460e-8622-fe539542e952" class=""><strong>Shallow NN vs Deep NN</strong><div class="indented"><div id="68d0767b-d35f-4e2d-bfc9-51baef8ed994" class="column-list"><div id="cf35a581-1c30-4f53-8559-e823fb7ad622" style="width:50%" class="column"><p id="a1d2a223-c138-41ee-81d9-a17e87887bac" class="">Shallow NN:<div class="indented"><p id="0dfd2c00-f88a-4cd6-b272-6abe02ed2eb1" class="">Simple NN architecture</p><p id="ff2733b8-d157-4fc7-a0f0-d9f61cba29a8" class="">No backpropagation</p><p id="80b05d09-cc58-4508-80aa-37e3dad2a5a9" class="">Good for simple jobs</p><p id="18aee6b1-97ab-4b53-bfcb-356f933850f9" class="">
+</p></div></p></div><div id="615c6cea-daef-4fff-a2d3-d6c7dac8aec7" style="width:112.5%" class="column"><p id="e7a13f41-f4bc-4501-82cb-e0073dc0b923" class="">Deep NN: <div class="indented"><p id="6ddae422-a14f-46c0-9977-0a035812a355" class="">More complex NN architecture</p><p id="a90db8ab-4849-4965-b587-71241b067aff" class="">Backpropagation training</p><p id="0fd1f624-e0b0-4160-8282-38673c63ea75" class="">More complex jobs(including calculus…)</p><p id="43cfb14a-ebe1-4176-a0fa-d1a83bb4c92f" class="">Gradient Descent Learning</p><p id="7a66e065-0483-4ab9-a740-e41dce1a511c" class="">Ex: alpha-go</p><p id="f26896be-d873-4da7-a446-56ab68572b49" class="">
+</p></div></p></div></div></div></p><p id="f1fa0456-1720-412e-bba4-e01479470982" class=""><strong>Convolutional Neural Networks(CNN)</strong><div class="indented"><p id="00040a99-9fff-4187-a95e-2cd8a8e22abb" class="">A NN is composed of <div class="indented"><p id="eb4d0b59-73a1-4f1f-9962-60d1d81374c8" class="">Hidden layers</p><p id="21e618ae-0531-4b6e-8b2b-ee59a3032d7a" class="">Convolutional layers</p><p id="215cea61-9764-4b05-9034-c7b2308a1bae" class="">Pooling layers</p><p id="56adbdd6-ac01-4d48-9392-033efae38537" class="">ReLU: <div class="indented"><p id="9074f5d2-41d3-4a64-82d4-6f4fc0eece64" class="">Rectified </p><p id="85fc257a-15b1-4027-9a3b-ad15e19a6152" class="">Linear </p><p id="d28b9618-87a6-4e48-bc5b-7558b0bb8e91" class="">Unit</p></div></p><p id="419aec8c-2975-4e46-92fb-3b20d9ac59df" class="">Relise(?)</p><p id="50f83db6-0823-4594-b94c-99121de848e1" class="">
+</p><p id="b37e598e-896b-4871-a8e8-983ef46a0050" class="">
+</p></div></p></div></p><p id="d742d204-7ccb-4d50-9754-78974efe172a" class=""><strong>Recurrent Neural Networks(RNN)</strong><div class="indented"><figure id="33d4a4f0-467a-489c-83c3-3d444f5254e3" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Untitled%202.png"><img style="width:288px" src="0104%2050d8302ba4ac4755841773ce25418027/Untitled%202.png"/></a></figure><p id="45b178a5-c9e5-46d0-8f2f-df9219e1b56b" class="">represent info about context<div class="indented"><p id="a4f382d1-07f3-4aaa-95ea-072323acf1ad" class="">I have a dog</p><p id="3ca3d50a-e11c-4070-b84d-fc414880b591" class="">we have a house</p><p id="f4d2d850-530d-4d26-9b5f-98bd69776b55" class="">I dog a have // x</p></div></p><figure id="d2a69d01-0ee0-48ef-916d-03c6f330da2f" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.14.53_AM.png"><img style="width:480px" src="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.14.53_AM.png"/></a></figure><p id="37a625a8-1e3b-46e5-9cfb-62f3bc415314" class="">Ex: Stock Prediction</p><p id="9cb22ecf-b708-4430-b359-5340c7e05e83" class="">Ex: Speech Recognition</p><p id="22aaa564-39da-4c9c-8c8d-a81a0d52dc14" class="">
+</p></div></p><p id="cbc38ff4-e4f3-479e-8bb1-50f4ea4cb1fd" class="">
+</p><p id="e080e50b-4033-4301-8e7c-09db3e2e04da" class=""><strong>Reinforcement Learning</strong><div class="indented"><figure id="bffbcb66-dc0f-463c-86dd-9ab1013b4509" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Untitled%203.png"><img style="width:336px" src="0104%2050d8302ba4ac4755841773ce25418027/Untitled%203.png"/></a></figure><figure id="7fced17f-3a24-4a2a-819d-34463c0e210d" class="image"><a href="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.17.01_AM.png"><img style="width:480px" src="0104%2050d8302ba4ac4755841773ce25418027/Screenshot_2023-01-24_at_1.17.01_AM.png"/></a></figure><p id="64b04dc7-329d-4f5c-baaa-fd0e1896bf85" class="">
+</p><p id="1db233e2-44b4-4322-8e65-348785a6b3fc" class="">
+</p><p id="a17561a8-e574-4e62-8411-1a860271ae03" class="">
+</p></div></p><ol type="1" id="0cf4f0d8-45ac-4eeb-957a-c73556e2e5da" class="numbered-list" start="1"><li><strong>Data mining</strong></li></ol><ol type="1" id="724d6d08-712e-442a-9f7a-06be5ea031fe" class="numbered-list" start="2"><li><strong>Neural Networks (with the project)</strong></li></ol><p id="8baf9740-c129-49e1-91f4-0c95566fd195" class="">
+</p><p id="e48b3ffd-7f91-4c0f-a092-8db620a88d07" class="">
+</p><p id="91fe964f-bd56-4517-93ff-b0ffc3075f93" class="">
+</p><p id="980e38c6-c836-47b7-955e-445fe4baa987" class="">
+</p><h1 id="1468e3c3-d6db-474f-b08f-d218024a15f7" class=""><strong>Database review</strong></h1><p id="1bc93dea-b441-4038-ae64-7e2763dbafd4" class=""><strong>File processing(1950s~1960s)</strong><div class="indented"><p id="e26df580-095b-42f1-8d4f-983b95ac912e" class="">COBOL</p><p id="dd6cae26-5f58-4fb2-a982-3d3867f3651e" class="">No strict DB concept</p><p id="a79d0968-98bf-4c75-ba90-8edc244458db" class="">Data is managed in Files</p></div></p><p id="511b5049-ee7e-41f1-919c-acbe147c10ec" class="">
+</p><p id="f443144c-5627-4066-96a6-ac36b724cd1a" class=""><strong>Database Management System(1960s~1990s)</strong><div class="indented"><p id="c041b618-6780-477c-ac02-348db6591b9e" class="">Relational DB<div class="indented"><p id="af42a154-9a53-4f08-b8ec-bc37a570ad80" class="">Entity-relation model</p></div></p></div></p><p id="93afa420-7104-4fee-b2ca-785dba43a946" class="">
+</p></div></article></body></html>
