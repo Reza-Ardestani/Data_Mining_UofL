@@ -1,0 +1,699 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>0123</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ee2528c2-878f-4d7e-9d34-654b6ad7ddb0" class="page sans"><header><h1 class="page-title">0123</h1></header><div class="page-body"><p id="9b590054-67d0-47ab-b1a9-0df88c05ce1c" class=""><strong>Data preprocessing</strong><div class="indented"><p id="f8ac3491-84e4-493c-b422-5d630c0c2acf" class=""><strong>Discretization(Continuous → Symbolic)</strong><div class="indented"><p id="3c648279-8c8e-4ba4-8fdc-8a853b7aabde" class=""><strong>Segmentation by natural partitioning</strong><div class="indented"><p id="ef82e9fa-e7ea-4514-92c3-9820d6790566" class=""><strong>MSD</strong>…</p><p id="71235b12-d6a5-4eb7-a92a-2745cacd4776" class=""><strong>3, 6, 7, 9 → 3 bins</strong></p><p id="f1cb9407-9e25-4442-805a-c389641f1bba" class=""><strong>2, 4, 8 → 4 bins</strong></p><p id="92ff46de-59ea-4aa5-ab96-160ca302d5b1" class=""><strong>1, 5, ≥ 10 → 5 bins</strong></p><p id="5789bc01-b93a-424b-8178-ef26f7dcfb62" class="">
+</p><p id="00551b8e-9c4a-4569-bc8c-5ccccd193d7e" class="">          min     max</p><p id="dddf57d1-1464-40d1-8716-6329c83e938e" class="">Ex: <strong>[-1000, 2000]                     </strong><div class="indented"><p id="3ebc7a44-952f-4661-a914-cd90a9e6934a" class="">2000 - (-1000) = 3000(MSD=3)</p><p id="e6399d69-547d-451a-b0f4-eb7cceb47543" class="">[-1000, 2000]</p><p id="521f9085-c281-4307-be0a-43f8ce55d208" class="">→ [-1000, 0]   (0, 1000]   (1000, 2000]            // <strong>( ) means exclusive (does not include) [ ] means inclusive (does include)</strong></p><p id="44883201-a8c3-4a9a-8222-ab1f31930e84" class="">
+</p></div></p><p id="e84b1d17-887f-45e2-87e9-d78e9d524f12" class="">Ex: <strong>[-100, 500]</strong><div class="indented"><p id="ea3c6cfe-9eca-42a2-ab44-1fdbeda1ff5c" class="">500 -(-100) = 600(MSD=6)</p><p id="55efb208-8fe2-499c-812b-18a3fa864bfa" class="">[-100, 500]</p><p id="12431e37-913d-4a4a-810b-fd83d2cda784" class="">→ [-100, 100]   (100, 300]   (300, 500] // 3    <div class="indented"><p id="3b86a067-0fde-414e-95aa-abb963ccf54b" class="">100-(-100) = 200(MSD=2)</p><p id="8ce6276a-2389-4925-8e42-c216cbd4aa88" class="">→ (-100, -50)   (-50, 0)   (0, 50)   (50, 100) // 4</p><p id="df386417-a41b-4b05-85e8-5ba005a3426d" class="">
+</p></div></p></div></p><p id="844f8b7c-668c-42b0-8953-d1369a53a98d" class="">Ex: [-158,836, 1,838,761] // Round to the closest million<div class="indented"><p id="e069ffd7-9619-4926-a010-ff9725e80371" class="">→ round down to the closest million<div class="indented"><p id="ac68c8f4-bcd1-4069-b8c3-0d279f74d7cb" class="">round down on minimum to the closest million</p><p id="27990a12-c0d5-42c4-8e84-0d44dbf0169c" class="">&amp; round up on maximum to the closest million</p></div></p><p id="2cddd412-9938-43de-8b16-937ab3b0cca1" class="">→ [-1,000,000, 2,000,000] // don’t worry about () and [] too much</p><p id="139e2803-c463-4636-b6ae-09e2490a8797" class="">→ [-1,000,000, 0]   [0, 1,000,000]   [1,000,000, 2,000,000]</p><p id="3b994bd2-add5-4374-9285-1b883b1a62e5" class="">
+</p><p id="df05fcfc-08c9-4aba-8197-695e65b3f97e" class="">
+</p></div></p></div></p></div></p><p id="5ec7c3ff-8ce7-48bd-9d0c-076ff28ba7f3" class="">(PCA)…</p><p id="463445e8-975c-4fad-9f9e-0fa1745223f2" class="">
+</p><p id="e850df3f-c2f2-42cc-9d31-1004373889fd" class="">
+</p><p id="061d50b0-04b0-49b8-a3c4-3a91a5d0f629" class=""><strong>Concept Hierarchy(Reducing data volume)</strong><div class="indented"><p id="8be8e3f0-4f4f-4219-9e66-24b4a7e310cd" class=""><strong>Specify an ordering of attributes</strong><div class="indented"><p id="48e351b7-bb41-41df-8d25-361ec0fa4234" class="">Ex: Street &lt; City  &lt; Province &lt; Country<div class="indented"><p id="536fa62e-23ad-42a2-8eed-552d2df55f6a" class="">→ concept hierarchy</p><p id="05845938-deb5-4d65-a0e5-4c34de2e2158" class="">Street &lt; City &lt; Country</p><p id="9c1ee4d3-e057-4b52-ac35-7f85787ed54c" class="">Street &lt; City &lt; Province &lt; Regions &lt; Country</p></div></p></div></p><p id="52140a46-2850-4440-80dd-b63fa5fcad51" class="">
+</p><p id="b6b4981d-e0cb-47bd-81bf-17d460a7c14c" class=""><strong>Use concept hierarchy to group data</strong><div class="indented"><p id="cb10f7d9-a41c-4eef-ab58-95292ef0a1e2" class="">           Lethbridge</p><p id="c4f9e773-929d-417d-8616-a8ddffbcc8fb" class="">           |                     \</p><p id="47b534ba-9ea2-48e4-922f-6348d2beaa07" class="">Columbia BLVD       Univ. Drive</p><p id="3c84a0ea-7893-4fb9-acc4-3455f28506b7" class="">
+</p></div></p><p id="21b6bfdf-e783-4dc8-b46f-b25b117009aa" class=""><strong>Summarize/Aggregate data</strong><div class="indented"><p id="0dfe984e-618f-4e1d-8050-a018826ec88f" class="">From a lower level in a concept hierarchy to a higher level</p><p id="b0cf0979-0f7a-4b3c-917d-19a4ce9f0588" class="">Ex. Sales for a product in the world<div class="indented"><figure id="e4d86873-c527-41b5-94e0-a1a668fdc8c3" class="image"><a href="0123%20ee2528c2878f4d7e9d34654b6ad7ddb0/Untitled.png"><img style="width:624px" src="0123%20ee2528c2878f4d7e9d34654b6ad7ddb0/Untitled.png"/></a></figure><p id="76aaa5f2-1dc3-45d7-b23f-0d7b230b161f" class="">Domain knowledge</p><p id="189273ec-612c-4226-bac7-8704893581a3" class="">Business rules</p></div></p><p id="f6c5b729-bfad-475f-9bcf-6fb4660b53cb" class="">
+</p><p id="27904de0-c420-46d1-8f4f-df2e25cca26b" class="">
+</p><p id="b4c7a2f6-7564-4b5d-baca-e6859f8898c3" class="">Ex. Different Concept hierarchies<div class="indented"><figure id="7dac5494-324c-4567-b99e-cd30f51f44df" class="image"><a href="0123%20ee2528c2878f4d7e9d34654b6ad7ddb0/Untitled%201.png"><img style="width:303px" src="0123%20ee2528c2878f4d7e9d34654b6ad7ddb0/Untitled%201.png"/></a></figure><p id="bac7aa54-5143-468a-b171-7bd13ec814e2" class="">
+</p></div></p><p id="4aa56b1c-27e3-466f-83c0-6434b1d4f27c" class="">
+</p><p id="f49d762c-23a2-4283-89a3-14235208d9fb" class="">(Spearman correlation analysis)… google it…</p><p id="92c6e9e9-e744-4022-94b6-36163c4b135c" class="">
+</p></div></p></div></p></div></p><h1 id="c53d4033-813c-453b-95cf-6cad72647274" class=""><strong>Frequent patterns, association &amp; correlation</strong></h1><p id="35c292e5-a764-41a0-a2ac-c0b1fee2f27a" class=""><strong>Frequent pattern</strong>: a pattern that occurs <strong>frequently</strong> in a dataset ← Data table</p><p id="3953db55-eb53-49dc-9533-a4950aba0c4a" class="">
+</p><p id="92d622b7-250e-47e2-b5c2-289f9d873b8d" class=""><strong>Applications</strong>: Basket analysis(such as Walmart)</p><p id="a0b06a09-cf7e-4abb-8fe0-6b11d627b8c5" class="">                        Web log analysis(P1→P2→P3)</p><p id="68253ce4-fe4b-4461-b091-55c140837119" class="">                        DNA sequence analysis(BIOINFO) → what kind DNA sequence are more sensitive to a drug?</p><p id="8cf92306-f10c-4ca4-a668-c9d8f05f36df" class="">                        Catalog design → what products are the most viewed by people?</p><p id="35202b2c-a0e9-47c3-8fb3-70c71b72e287" class="">
+</p><p id="e8d42577-eabb-4120-9c61-0812e2d620cf" class=""><strong>Discover the inherent relationship among data items</strong></p><p id="a89b9035-36fe-431c-9c4d-46e028f051e1" class="">
+</p><p id="9f69bb9a-4575-426d-89ec-8aaa3f9258bc" class=""><strong>Form the foundation of many DM Tasks // Sth happened → Sth else will happen</strong><div class="indented"><p id="c3d093f1-8ae3-4399-a172-15504eb89d5d" class="">Association for causality analysis // {E1, E2, E3} → result</p><p id="fe028000-e917-4809-98fe-02a6da90b0eb" class="">Sequential Patterns // {P1, P2} → P3</p><p id="6ad12e76-e6b2-4788-97c5-5b394534aea1" class="">Association-based classification // {kw1, kw3, kw4} → C1</p><p id="7e8a95ba-0793-4d56-a6df-bcacca3bf777" class="">Patterns in multimedia, time-series &amp; stream data</p><p id="ad4816e4-86e7-4e31-a631-18d61d7596b4" class="">
+</p></div></p><p id="797f9852-0689-4003-b9d8-6e05b85d88c4" class=""><strong>Basic concepts</strong> <div class="indented"><p id="f8aed172-b627-4810-9fbb-47b4beb28ab9" class="">Usually, association is used in the context of transactional DB</p><p id="2a669799-898c-40d8-b7b0-8b11089bf6b5" class="">A whole set of items = {i1, i2, i3, …}<div class="indented"><p id="ff313287-4891-4403-aec7-2e036882ea80" class="">Ex: In market {milk, beer, pencil, toy, …}</p></div></p><p id="b9dbf756-ac41-4b0d-adcd-51b32e99429b" class="">An <strong>itemset</strong> is a <strong>subset</strong> of <strong>the whole set</strong><div class="indented"><p id="13206520-4dd6-4f5e-8e75-87b52d4d3a1e" class="">{i2, i3}     {i2, i3, i5}          {i3, i5}</p><p id="e0040cf5-7d01-49d2-84a6-c01409eeef1e" class="">1-itemset = {{i1}, {i2}, {i3}, …</p><p id="79bb66a7-8122-4f00-8668-2fba33f940f0" class="">2-itemset = {{i1, i2}, {i2, i3}, {i3, i4}, …</p><p id="191190c8-66f5-4b78-98c8-b22b8012391e" class="">3-itemset = …</p><p id="3397dd45-5c35-4ef8-bdfa-d1453a4fe427" class="">4-itemset = …</p><p id="6e074477-a6bc-4a75-87bb-1206c2ac5b37" class="">
+</p></div></p></div></p><p id="e80c1590-1944-4ed9-9711-a43cd77e299a" class=""><strong>Support of an itemset X    e.g. X = {i2, i3, i5}</strong><div class="indented"><figure id="a8339925-b9ec-4c17-bf70-143322168d59" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">⁍ </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure><p id="9450a6ff-6cfc-44f9-aab9-fedaf80487c8" class="">
+</p></div></p><p id="f67a3ce0-7ac5-4ecc-acc9-9138e3d95d47" class=""><strong>Given 2 itemsets X &amp; Y</strong><div class="indented"><p id="bab63412-c216-4f17-8175-89edd4c6b563" class="">Confidence of Association rule X → Y</p><figure id="18be03a4-dde4-4c01-8f08-b67fb5b07999" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">⁍</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure><figure id="436d3ccc-33cb-445a-92b4-8b715f4f7fa6" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">                                           ⁍</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure></div></p><p id="323dbfc6-7aa8-4845-b4f5-00195af27cd2" class="">
+</p><p id="2e69d8cd-4ab3-4eab-a3b0-e6771c65b9b2" class=""><strong>Association mining goal: min_support, min_confidence</strong><div class="indented"><blockquote id="d65a1508-7b3c-4b61-a844-b86a42395da4" class="">Find all the itemsets whose support ≥ min_support
+                         ⇒ <strong>Frequent itemset
+</strong>Find all the association rules whose ≥ min_confidence
+           Support of association rule = support of <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span></span><span>﻿</span></span> U <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span></span><span>﻿</span></span></blockquote><p id="c9b13fa2-3f50-4a87-8477-9b614ebff034" class="">
+</p></div></p><p id="c0e33925-6f4d-4bda-94f7-eec38ff156da" class="">Ex: the whole itemset = {A, B, C, D, E, F}<div class="indented"><p id="5d056681-7d33-414d-b0e3-9ecfbd18a1af" class="">transaction DB</p><table id="ead68aa0-f66c-47dc-9e4d-c92182fa67c0" class="simple-table"><tbody><tr id="6fa64d7e-2a41-478a-af02-0f1ed8d1666c"><td id="{^ka" class="" style="width:47px">TID</td><td id="[yz&lt;" class="">Items</td></tr><tr id="e6af4d23-c653-45a3-a937-1f8eb39f803d"><td id="{^ka" class="" style="width:47px">10</td><td id="[yz&lt;" class="">A, B, D</td></tr><tr id="bd5ebff3-4469-40bc-a60d-7d49f1b499ac"><td id="{^ka" class="" style="width:47px">20</td><td id="[yz&lt;" class="">A, C, D</td></tr><tr id="695344f6-5e52-4179-b309-e3285f70d4a4"><td id="{^ka" class="" style="width:47px">30</td><td id="[yz&lt;" class="">A, D, E</td></tr><tr id="dd622a03-5eb6-4128-b5ca-53dd26aeb101"><td id="{^ka" class="" style="width:47px">40</td><td id="[yz&lt;" class="">B, E, F</td></tr><tr id="5400c823-cb3b-482e-830d-cdf20edc1921"><td id="{^ka" class="" style="width:47px">50</td><td id="[yz&lt;" class="">B, C, D, E, F</td></tr></tbody></table><p id="e649ed23-c2dc-4b39-b979-6d4047d732f5" class="">Support for 1-itemset: <strong>{A}=3/5</strong>   <strong>{B}=3/5</strong>   {C}=2/5   <strong>{D}=4/5</strong>   <strong>{E}=3/5</strong>   {F}=2/5                      min_supp=3/5</p><p id="485e7dbd-9ef0-4bc4-810c-1eaf090df884" class="">Support for 2-itemset: {A,B}=1/5   {A,C}=1/5   <strong>{A,D}=3/5</strong>  <strong>{A,F}=3/5</strong>    …      {E,F} = 2/5                 brute-force</p><p id="1c3ce0cd-3f83-4e89-9f22-cd5e24876a21" class="">Support for 3-itemset: {A,B,C}=0/5   {A,B,D}=1/5     …        {D,E,F}=1/5</p><p id="9517e63d-2232-47d3-9056-7562e231ad0a" class="">Support for 4-itemset: {A,B,C,D}=0/5    …      {C,D,E,F}=1/5</p><p id="e76bfd2a-9af4-48aa-bbcf-d9e14e40a4e3" class="">Support for 5-itemset: …</p><p id="5f69d285-eaf7-4d8b-8f56-2a9c7ff82431" class="">Support for 6-itemset: …                                 // more items → less chance…</p><p id="7cd300dc-c4a6-4ba4-a6eb-362f5fc1223e" class="">
+</p><p id="d038e0b2-ea66-4a39-a55c-d44724669b38" class="">Association Rule {A}→{D}<div class="indented"><figure id="baf9289a-f432-42eb-b111-6d71da91ffa4" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">⁍</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure><figure id="1427d496-dac4-401a-ad6e-a46d9e0fd29d" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">⁍</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure><p id="a818f465-1c59-4428-8788-7413ee520eff" class="">
+</p></div></p><p id="f7806c7d-2db0-4312-85ff-3429ad52f369" class="">Association Rule {D}→{A}<div class="indented"><figure id="ec223679-527e-4764-b645-c8206a4d9940" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">⁍</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure><figure id="1d92de3c-ac23-46f7-86ed-3b52e12b5a58" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">⁍</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure><p id="940dee1f-099c-42a6-a020-1797af03d410" class="">
+</p><p id="bd0468a9-ffee-4410-9e1a-640fcc10cf8a" class="">
+</p><p id="7b38a3cd-4fd2-4b41-bbc0-d5c70809d941" class="">
+</p></div></p></div></p></div></article></body></html>

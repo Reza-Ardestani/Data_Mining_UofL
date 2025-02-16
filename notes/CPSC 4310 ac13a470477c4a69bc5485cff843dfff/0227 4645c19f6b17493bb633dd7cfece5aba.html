@@ -1,0 +1,723 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>0227</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4645c19f-6b17-493b-b633-dd7cfece5aba" class="page sans"><header><h1 class="page-title">0227</h1></header><div class="page-body"><p id="09b2f21e-b389-4b9b-a285-3a453887d647" class="">
+</p><p id="bd5121f8-baf0-4365-98de-3a0459692d6e" class=""><strong>Decision-tree classification</strong><div class="indented"><p id="81053dcc-ed85-4406-a4a3-74ea20a4af7b" class=""><strong>Overfitting problem</strong><div class="indented"><figure id="3328b304-2e2e-4610-9395-a5d4e93cdddd" class="image"><a href="0215%20f3c0271ece974487b67e5d9bfbb45110/Untitled%203.png"><img style="width:720px" src="0215%20f3c0271ece974487b67e5d9bfbb45110/Untitled%203.png"/></a></figure><p id="21a6ec11-5501-43a2-9466-51a688aa6267" class="">Too good for the historical data set to be generalized for future prediction</p><p id="1979fc92-e181-4c43-9c88-b98a68093c61" class="">
+</p><p id="b89cd433-01ea-48da-a7a8-7a87bafeb9dc" class=""><strong>A decision tree may </strong><strong><span style="border-bottom:0.05em solid">overfit</span></strong><strong> the training dataset</strong><div class="indented"><p id="f2e133f8-b8e9-4b05-9968-3fe07d354bc0" class=""><strong>Too many branches in the tree (why?) ← could be an assignment question…</strong><div class="indented"><p id="e2ff3e02-b95e-4807-8c08-d61f012f2080" class="">generation power???</p><p id="ac358f68-f823-4aa6-b4bc-950101f010f8" class="">
+</p></div></p><p id="ac819fd5-a5e3-4ee7-8fbe-d5b556355f1f" class=""><strong>2 ways to prune a decision tree</strong><div class="indented"><p id="e6d9273f-0968-4e61-8e3a-a967ad9f8105" class=""><strong>Prepruning: Halt tree growth on a node</strong><div class="indented"><p id="f85c2885-a668-4bc5-aa7d-4c9d1e1c5f09" class="">Ex: if the node covers a certain # of data points, stop the tree growth there</p><figure id="20109ae6-101a-4345-a684-bc5bc2573103" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled.png"><img style="width:236px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled.png"/></a></figure></div></p><p id="8568bf44-5a49-4b5d-92cd-23b666f41a5a" class="">
+</p><p id="ca62b20a-8c52-4a07-ac41-6737d594832a" class=""><strong>Post-pruning: Remove branches from a fully-grown tree</strong><div class="indented"><p id="0aa29a28-847c-4702-a4cf-ae7b57d5a03c" class="">Ex: use another classification on the table corresponding to a node<div class="indented"><p id="3d8cf883-7a6a-4dcf-a33e-9a0bda3d733e" class="">(use another classification algorithm at a node to delete all the branches from the node)</p></div></p><figure id="ebb813ca-4e9c-4eeb-9c5f-045496e26dbe" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%201.png"><img style="width:404px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%201.png"/></a></figure></div></p></div></p></div></p></div></p></div></p><p id="a0036636-5b41-49ec-8d3e-ccd2b9c97286" class=""><div class="indented"><p id="96dd77d2-75e4-4391-b375-215bc93acb5e" class=""><strong>Handling missing values</strong><div class="indented"><p id="f679fd92-8436-4777-8b2f-e1f9828048c9" class="">could be a master&#x27;s thesis</p></div></p><p id="84a241bc-54b7-4d23-991a-5605e3fbd2f0" class="">
+</p><p id="875fb74d-8f78-4e80-826f-82470942294a" class="">
+</p></div></p><p id="75ab9558-935e-40b4-b6ca-414918b50f29" class=""><strong>Rule-based classification</strong><div class="indented"><p id="759a49a3-ad6f-4da6-9f38-6473701124c8" class="">(tree-based ← good, SVM ← second, CNN ← bad)</p><p id="c17df6f8-d0ea-4cd3-9fe0-56f36ddb074d" class="">
+</p><p id="99512dfc-1d0f-47ae-942b-7ab17cbc9055" class=""><strong>Knowledge is represented as rules</strong><div class="indented"><p id="da094a90-ba8c-4a3a-be24-52f4965c647b" class=""><strong>IF… THEN</strong><div class="indented"><p id="a96551ca-00c4-419d-ae37-21a3bf0b4d0c" class="">Ex: IF age = “&lt;30” AND student = “Yes” THEN buys_computer = “Yes”</p></div></p><p id="0af5a85d-309a-479b-86e4-166090f7cdf5" class="">
+</p><p id="9852adf2-9a6e-48b6-9d65-ed9522562e3a" class=""><strong>IF condition(pre condition) THEN conclusion(consequence)</strong></p></div></p><figure id="cf97b244-036c-44f3-a0cf-ef98e2d4e115" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%202.png"><img style="width:528px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%202.png"/></a></figure><p id="3dfb331c-7dcc-4837-bb67-2a43c90ad489" class="">
+</p><p id="92f50c74-cea9-45bc-9983-380df84fc8f2" class=""><strong>Given a new instance, if the precondition is satisfied by the attributes of the record, 
+   we say this rule covers the new instance</strong><div class="indented"><p id="fab130fb-b006-4e9d-b21e-4913f2d4040f" class="">Ex: IF Age = “≤30” AND Student = “No” THEN Buys_computer = “No”<div class="indented"><p id="6454b599-c1f3-4fce-9b0f-5ec3459703c0" class="">IF Age = “30..40” THEN Buys_computer = “Yes”</p><p id="8747f2b7-2c67-4ae9-9c2c-dac35c9400e3" class="">…</p></div></p></div></p><p id="fcd878e4-b321-43bf-a9cc-e762a0f53d40" class="">
+</p><p id="33d71eed-5d8c-4be4-9350-30fea097dd3b" class=""><strong>Evolution of Rules R</strong><div class="indented"><p id="50dc4626-b9b5-49fa-a8f7-00caf510d5c2" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi>c</mi><mi>o</mi><mi>v</mi><mi>e</mi><mi>r</mi></mrow></msub><mo>=</mo><mi mathvariant="normal">#</mi><mtext> </mtext><mi>o</mi><mi>f</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>d</mi><mi>s</mi><mtext> </mtext><mi>c</mi><mi>o</mi><mi>v</mi><mi>e</mi><mi>r</mi><mi>e</mi><mi>d</mi><mtext> </mtext><mi>b</mi><mi>y</mi><mtext> </mtext><mi>R</mi></mrow><annotation encoding="application/x-tex">N_{cover}=\#\ of records\ covered\ by\ R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">co</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">v</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">er</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">#</span><span class="mspace"> </span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal" style="margin-right:0.02778em;">recor</span><span class="mord mathnormal">d</span><span class="mord mathnormal">s</span><span class="mspace"> </span><span class="mord mathnormal">co</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">ere</span><span class="mord mathnormal">d</span><span class="mspace"> </span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span></span><span>﻿</span></span> ← Testing data set</p><p id="95cc66ff-bc1a-41fe-9aba-df99dbd255c1" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi>c</mi><mi>o</mi><mi>r</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi></mrow></msub><mo>=</mo><mi mathvariant="normal">#</mi><mtext> </mtext><mi>o</mi><mi>f</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>d</mi><mi>s</mi><mtext> </mtext><mi>c</mi><mi>o</mi><mi>r</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi>l</mi><mi>y</mi><mtext> </mtext><mi>p</mi><mi>r</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>c</mi><mi>t</mi><mi>e</mi><mi>d</mi><mtext> </mtext><mi>b</mi><mi>y</mi><mtext> </mtext><mi>R</mi></mrow><annotation encoding="application/x-tex">N_{correct}=\#\ of records\ correctly\ predicted\ by\ R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">correc</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">#</span><span class="mspace"> </span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal" style="margin-right:0.02778em;">recor</span><span class="mord mathnormal">d</span><span class="mord mathnormal">s</span><span class="mspace"> </span><span class="mord mathnormal">correc</span><span class="mord mathnormal" style="margin-right:0.01968em;">tl</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"> </span><span class="mord mathnormal">p</span><span class="mord mathnormal">re</span><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mspace"> </span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span></span><span>﻿</span></span> </p><div id="a07938a6-ecb4-4e1c-9b54-0ff05bd5172c" class="column-list"><div id="a97ad513-f6ed-4097-a38f-9e76dce99b47" style="width:43.75%" class="column"><p id="a5ef96e4-1f77-47e9-a1f3-5d0578d07f64" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>o</mi><mi>v</mi><mi>e</mi><mi>r</mi><mi>a</mi><mi>g</mi><mi>e</mi><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><msub><mi>N</mi><mrow><mi>C</mi><mi>o</mi><mi>v</mi><mi>e</mi><mi>r</mi></mrow></msub><msub><mi>D</mi><mrow><mi>t</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi><mtext> </mtext><mi>d</mi><mi>a</mi><mi>t</mi><mi>a</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">Coverage(R)=\frac{N_{Cover}}{D_{testing\ data}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.4367159999999997em;vertical-align:-0.5480799999999999em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8886359999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:-0.02778em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">es</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">in</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mspace mtight"><span class="mtight"> </span></span><span class="mord mathnormal mtight">d</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">a</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29011428571428566em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.410305em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">C</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">v</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">er</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5480799999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span></p><p id="6e540d57-2484-463e-8a76-963eb67e7630" class="">
+</p><p id="fec59105-05c9-4630-b4a9-dc82d995dd9c" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>c</mi><mi>c</mi><mi>u</mi><mi>r</mi><mi>a</mi><mi>c</mi><mi>y</mi><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><msub><mi>N</mi><mrow><mi>C</mi><mi>o</mi><mi>r</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi></mrow></msub><msub><mi>D</mi><mrow><mi>t</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi><mtext> </mtext><mi>d</mi><mi>a</mi><mi>t</mi><mi>a</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">Accuracy(R)=\frac{N_{Correct}}{D_{testing\ data}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal">cc</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">cy</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.4367159999999997em;vertical-align:-0.5480799999999999em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8886359999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:-0.02778em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">es</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">in</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mspace mtight"><span class="mtight"> </span></span><span class="mord mathnormal mtight">d</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">a</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29011428571428566em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.410305em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">C</span><span class="mord mathnormal mtight">orrec</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5480799999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span></p></div><div id="ea68942f-f3ca-4264-8a69-b0ea4345b6b3" style="width:112.5%" class="column"><blockquote id="5117f897-fb80-4055-8861-33b9a6c48f1d" class=""><span style="border-bottom:0.05em solid">evaluation metrics</span>(precision, recall)<p id="19f89a98-0d99-4486-bca0-a1264bffeb60" class="">for whether a decision tree is good or not<div class="indented"><p id="71fbea39-872c-4aef-9fac-f7a332babb7b" class="">other evaluation: true positive, false positive, true negative, false negative ← not important yet…</p></div></p></blockquote><p id="29e608af-a9d8-4e80-aac0-a699c73e1d03" class="">
+</p></div></div><figure id="10bac5fb-d813-41a5-a073-96dc48f26498" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.07.56_AM.png"><img style="width:1572px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.07.56_AM.png"/></a></figure><p id="04bff0d3-09ef-4d56-9585-55c85d5d8335" class="">A rule is generated from the root to the leaf</p><p id="193d4411-53bb-4bba-8f91-8b25def8800d" class="">Each attribute &amp; branch forms a precondition of a rule</p><p id="1df7d1c2-ed94-469b-9c18-aed6c814b020" class="">The leaf is the consequence</p><p id="893f4248-9048-4b2b-a4ea-79269d820b5d" class="">
+</p><p id="ab503a92-a4f6-41e4-a98e-f68ef7f85016" class="">
+</p></div></p></div></p><p id="4c495e68-19b0-4ee9-be62-58b14a01d4c8" class=""><div class="indented"><p id="ce689d61-1c21-465e-a5d6-83865f0773b5" class=""><strong>SVM</strong></p></div></p><div id="3b90c8b0-5e4d-4172-91b2-8e6d11acbc0f" class="column-list"><div id="6f3913eb-3c7b-46c6-ace0-fd8f76e0310f" style="width:62.5%" class="column"><figure id="4d8d0bea-b7a9-438d-a0d2-7a7279163bff" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%203.png"><img style="width:288px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%203.png"/></a></figure><figure id="d547e525-00fa-4e3e-87d3-436abd1e53fc" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%204.png"><img style="width:288px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%204.png"/></a></figure><p id="8b57aa41-dbea-4906-aaea-014d19de4fc0" class="">
+</p><p id="a3f0c856-18ec-4842-90f2-a9ffa72241e7" class="">
+</p><p id="0fe111c3-0b0b-4ad7-b126-592dd005385e" class="">
+</p></div><div id="de801164-956f-43f8-888b-71b192564d01" style="width:112.49999999999997%" class="column"><figure id="88cae765-cb7e-49c1-860c-970eddd5fa99" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%205.png"><img style="width:258px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%205.png"/></a></figure><figure id="eda5fed5-45ca-4293-9eac-a016c77c6a79" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%206.png"><img style="width:288px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%206.png"/></a></figure><p id="eb1f8900-abb4-4811-afe2-a5407c592714" class="">
+</p></div></div><p id="929a9df3-71d8-4df2-987a-5f8987872057" class="">
+</p><p id="10c63842-fd4e-444f-99b3-fc237a8a73af" class=""><strong>Clustering</strong><div class="indented"><p id="052576e3-ef68-4fcd-8183-42582b9dc64b" class=""><strong>Given a collection of data points, group them into clusters</strong><div class="indented"><ol type="1" id="d1b813c3-19f2-420d-b7b0-d5e9a9d416e5" class="numbered-list" start="1"><li>Within one cluster, data points are similar</li></ol><ol type="1" id="e4dddd9d-26d8-4de5-84f9-fdabbc58819b" class="numbered-list" start="2"><li>Among clusters, data points are dissimilar</li></ol><figure id="50b7678b-97ee-474e-853b-a1e46cd6433f" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.15.40_AM.png"><img style="width:192px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.15.40_AM.png"/></a></figure></div></p><p id="3eb9e34a-ac95-411c-92c9-5528178118ad" class="">
+</p><p id="4abc976d-0515-41cb-a08f-ca5276f409a9" class=""><strong>Unsupervised learning</strong></p><p id="545adca9-7b3e-4c01-8d77-e4e33fc10ff5" class="">
+</p><p id="441c3248-e06c-48c3-965d-6a4d0a761607" class=""><strong>Typical applications</strong><div class="indented"><p id="b388f555-ec50-4439-a3f9-c3d484343c9c" class=""><strong>Stand-alone tool to analyze the distribution of data points</strong></p><p id="47d390a8-d5b8-406b-a895-6f49b468d9c7" class="">
+</p><p id="eceec402-676e-4be8-bb23-43daf6ca57f4" class=""><strong>Preprocessing steps for many other algorithms(including web mining)</strong></p><p id="154819e5-b4da-44ec-8587-484e6b79f7c4" class="">
+</p><p id="d6204dd8-bec9-436f-a65b-05dc404bd10c" class=""><strong>Pattern recognition</strong><div class="indented"><figure id="46143ab2-66ad-4ac1-b42b-511d7877b038" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%207.png"><img style="width:288px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%207.png"/></a></figure></div></p><p id="51516451-faf5-45d9-80f0-9eb3741102a8" class=""><strong>Spatial data algo(GIS)</strong><div class="indented"><figure id="0287864a-f0bd-4d35-a314-552d5afb545c" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.17.35_AM.png"><img style="width:192px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.17.35_AM.png"/></a></figure></div></p><p id="49fa89d1-9f7d-4e2c-9971-3bf3d63eb803" class="">
+</p><p id="cfa9a87b-e203-4093-a3eb-4f6b46dafc9e" class=""><strong>A good clustering algo: </strong><div class="indented"><p id="3475c2ed-05be-4cd9-9f1a-88e14b7b97b6" class="">High <span style="border-bottom:0.05em solid">intra-clustering</span> similarity(among nodes in the same cluster)</p><p id="79b17360-946c-4375-9cf1-1b7bdb7f10ba" class="">Low <span style="border-bottom:0.05em solid">inter-clustering</span> similarity(among clusters)</p><p id="806f7ea1-aba4-4ed6-a015-f7deee0b9390" class="">
+</p></div></p><p id="0fa3f39f-a611-456d-90ce-c081dc5e8bda" class=""><strong>Measure of clustering quality:</strong><div class="indented"><p id="a3312c6e-9d67-4259-b813-9aa8a017b421" class="">Similarity is defined as a <span style="border-bottom:0.05em solid">distance function</span>  between 2 data points: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>1</mn></msub><mtext> </mtext><mi mathvariant="normal">&amp;</mi><mtext> </mtext><msub><mi>P</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">P_1\ \&amp;\ P_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord">&amp;</span><span class="mspace"> </span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span><div class="indented"><p id="eb9f21ef-034b-4b11-a53e-c5dc3e160af1" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo stretchy="false">(</mo><msub><mi>P</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>P</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mtext> </mtext><mo stretchy="false">?</mo></mrow><annotation encoding="application/x-tex">d(P_1, P_2)=\ ?</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mclose">?</span></span></span></span></span><span>﻿</span></span></p><p id="cc06fc7d-b00f-4824-a5e0-e1763f66095d" class="">
+</p><p id="355a4da3-446d-4a8e-8934-18137761f967" class="">or… <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo stretchy="false">(</mo><msub><mi>P</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>P</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">d(P_i, P_j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span><div class="indented"><figure id="be9a84e0-8376-4bed-a104-a10567334a07" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.22.20_AM.png"><img style="width:132px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.22.20_AM.png"/></a></figure><p id="3865a133-858c-4b0c-abdb-549d1592977f" class="">
+</p></div></p></div></p><p id="d6fb20ee-73ad-4bdf-a70a-1e6335ef39fe" class="">Many definition of <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo stretchy="false">(</mo><mtext>  </mtext><mo separator="true">,</mo><mtext> </mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">d(\ \  ,\   )</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mspace"> </span><span class="mspace"> </span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span></p><p id="61cf2afb-d900-46fa-ae05-b61fed4ab40c" class="">
+</p><p id="4fe9ae1c-1354-4cc8-a6ff-6ac2c2a4cab9" class="">T1{i1, i2, i3, i5, i6, i9}</p><p id="7cd4c961-78c2-4d1f-a3b4-bfdef62d0bb1" class="">T2{i2, i3, i4, i8, i9, i10}</p><p id="af79941e-ac54-411a-a929-10b493faecaa" class="">
+</p></div></p><p id="cd59e72c-8eaf-4a07-867d-e30389fc482a" class=""><strong>Requirements of clustering</strong><div class="indented"><ul id="4fef1b1b-8ce6-4cc7-a9df-df80eb03b1ca" class="bulleted-list"><li style="list-style-type:disc">Scalability: Handle a large number of data points</li></ul><p id="af120cfa-c1d3-4d3c-8ff6-3a141d03b1ca" class="">
+</p><ul id="2452e550-29ab-493d-8480-08cebc6f346f" class="bulleted-list"><li style="list-style-type:disc">Handle different types of attributes(numerical &amp; symbolic)<figure id="bb56bf61-0a17-4ed1-9acc-33a86b5dba7a" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.25.42_AM.png"><img style="width:240px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.25.42_AM.png"/></a></figure></li></ul><p id="b1b3f06f-86c2-4566-acff-d61b55737d97" class="">
+</p><ul id="bf68bf3b-3c08-4e4f-8d28-03bb9c23208c" class="bulleted-list"><li style="list-style-type:disc">Discover clusters with different shapes<figure id="b15aa5a1-9e95-40c7-9fb5-26c4d17ad5e8" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%208.png"><img style="width:72px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Untitled%208.png"/></a></figure></li></ul><p id="ca2bb4e4-0fa5-40e8-9f36-2c9916e5b08c" class="">
+</p><ul id="1f52f95f-64bc-4f57-b2a9-13aff9704c56" class="bulleted-list"><li style="list-style-type:disc">Deal with noise &amp; outliers<figure id="3e277d81-266b-4dc6-8dbb-aac3aaacc02a" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.27.09_AM.png"><img style="width:132px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.27.09_AM.png"/></a></figure></li></ul><p id="185c9270-e88c-4a25-a457-0d05be717b9a" class="">
+</p><ul id="5b4e255c-3576-4b65-a0bd-25930726a4da" class="bulleted-list"><li style="list-style-type:disc">Insensitive to the order of input data</li></ul><p id="ec6adf6a-d9e3-41b3-916b-a88096a67194" class="">
+</p><ul id="cab71b7a-473d-46c4-b9ff-bce50e5e2faa" class="bulleted-list"><li style="list-style-type:disc">Incorporate user’s constraints</li></ul><p id="81aced63-5e69-4565-b1d2-5396711eeaff" class="">
+</p><p id="9610f580-0957-46be-916c-17b893e684f3" class="">
+</p></div></p></div></p><p id="0ebfccf7-a844-48a4-9b66-2114fe48e815" class=""><strong>Distance functions</strong><div class="indented"><figure id="e11dcfb7-079b-4405-ba1e-2e78e6969ff4" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.35.41_AM.png"><img style="width:192px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.35.41_AM.png"/></a></figure><p id="9e05d020-78e0-485b-b289-35db1353cde2" class="">Given 2 points: <div class="indented"><p id="5b18f342-709e-4fcd-9a7e-d6ac5bdfc349" class="">X = {x1, x2, …, xn}</p><p id="40204331-4aec-4a7d-a073-19a970ac9439" class="">Y = {y1, y2, …, yn}</p><figure id="c67f9dd9-a11b-45c4-90e8-6fd6301af014" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">⁍</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure><p id="112ef8dd-6a4a-4479-b979-cd514dc7e937" class=""><strong>Minkowski distance</strong></p></div></p><p id="46bad761-7ca7-4922-b799-c321838020b4" class="">
+</p><p id="b2bb00ba-6033-45de-a9cc-6ad154cddfe9" class=""><strong>q = 1 : Manhattan distance</strong><div class="indented"><figure id="23609424-7ccd-44fd-aa57-74d8afd6be5d" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">⁍</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure><figure id="7a2fdbbc-9a58-4691-830d-1b8ac86bf231" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.29.08_AM.png"><img style="width:288px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.29.08_AM.png"/></a></figure><figure id="57b45f84-e0df-486c-a79b-8a5abcda55dc" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.32.43_AM.png"><img style="width:36px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.32.43_AM.png"/></a></figure></div></p><p id="f9e59071-5d72-4f85-8696-8b1f9e6558f7" class="">
+</p><p id="bd43a9af-e195-47b9-902c-42e8d698b5fb" class=""><strong>q = 2 : Euclidean distance</strong><div class="indented"><figure id="2e8e0a21-2664-4b77-b6f4-30d91425745c" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>⁍</mtext></mrow><annotation encoding="application/x-tex">⁍</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord">⁍</span></span></span></span></span></div></figure><p id="6187e9ea-b7c4-4142-9ef0-473dbd52c367" class="">
+</p></div></p><figure id="80157d7f-4fda-4b83-9560-6dcca1153b67" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.41.24_AM.png"><img style="width:1457px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.41.24_AM.png"/></a></figure><p id="01f43c56-5eab-469f-8c8a-b5f4cec85829" class=""><div class="indented"><figure id="194a0958-91ce-44f3-9b3a-77b930e1dd69" class="image"><a href="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.47.20_AM.png"><img style="width:288px" src="0227%204645c19f6b17493bb633dd7cfece5aba/Screenshot_2023-03-16_at_1.47.20_AM.png"/></a></figure></div></p><p id="c98913b4-335a-4ac7-bcc3-e466174edca3" class="">
+</p><p id="beda1efd-3f19-4085-b266-8b90c061bd70" class=""><strong>Max</strong></p><figure id="08fac969-4d70-45b3-a52e-87c8a8e9f7af" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>d</mi><mo stretchy="false">(</mo><mi>X</mi><mo separator="true">,</mo><mtext> </mtext><mi>Y</mi><mo stretchy="false">)</mo><mo>=</mo><mtext> </mtext><mi>m</mi><mi>a</mi><mi>x</mi><mi mathvariant="normal">∣</mi><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">d(X,\ Y)=\ max|x_i-y_i|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">x</span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span></span></span></span></span></div></figure><p id="9d876b38-39cf-4785-b85c-723cb14c19cd" class="">
+</p><p id="ed38ff86-2405-4600-8820-11b8c752979c" class=""><strong>Binary, nominal, ordinal attributes</strong><div class="indented"><p id="0ea952a8-f5af-433f-8f14-44b78a104953" class="">Depending on the applications</p><p id="531c784f-8ccf-49f4-8f6a-571b34ef91b2" class="">Ex: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo stretchy="false">(</mo><msub><mi>v</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>v</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\delta(v_1, v_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span> = 1   if <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>=</mo><msub><mi>v</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">v_1 = v_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></p><p id="bd21d090-f14b-4691-8e89-b40962604dde" class="">      <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>↑</mo></mrow><annotation encoding="application/x-tex">\uarr</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mrel">↑</span></span></span></span></span><span>﻿</span></span>d                0   if <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub><mo mathvariant="normal">≠</mo><msub><mi>v</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">v_1 \neq v_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></p><p id="8d443d01-b10b-429e-8dec-222be81e11a0" class="">
+</p><p id="beb44e74-f6a3-474b-b8fb-6e43fd187a8f" class="">i1 i2 i3 i4 i5 i6 i7 i8 i9 i10</p><p id="1cd4dcc8-1f2e-4b5a-843f-ae2f076b4668" class="">[                                        ]</p><div id="4231f91c-3698-4b75-a569-8085f227bd35" class="column-list"><div id="a01d9846-b4c3-4a06-8588-2a1dce7d3940" style="width:50%" class="column"><p id="cead1aae-77db-4559-85d5-d0ab098307c7" class="">T1 = i1, i3, i4, i6<div class="indented"><p id="1149348a-8735-4cdc-91e8-56a9e65072e0" class="">[1 0 1 1 0 1 0 0 0 0]</p></div></p><p id="1c528fe3-2d4b-42b6-8d4f-f1108ffae939" class="">T2 = i3, i4, i5, i8, i9<div class="indented"><p id="abe00f2a-4dd3-45f8-aa11-c69e34f03528" class="">[0 0 1 1 1 0 0 1 1 0]</p></div></p><p id="79d378cd-e83b-4046-a824-e645eb4ec7bb" class="">
+</p></div><div id="3b2c7b7c-cdb0-49cf-8d6d-92eccb21aa15" style="width:150%" class="column"><blockquote id="23f284dc-dfbc-46ff-a8b2-538c57906408" class=""> 
+Hammingdistancee
+
+
+</blockquote></div></div></div></p><p id="d70bcd4f-1dd3-4b0e-8542-9163350e3509" class="">
+</p><p id="7e3d23d2-1795-4569-9d35-602227783103" class="">
+</p><p id="b17b7cfa-8310-4b36-aee5-f40645336152" class="">
+</p><p id="6e9d7bfa-30ae-4c6e-ab66-16efb24e7289" class="">
+</p><p id="2a3e547b-94b7-433d-bf20-70fa7bcc6163" class="">
+</p><p id="0c7089cb-9154-41cc-a828-b6911d17d47e" class="">
+</p></div></p></div></p></div></article></body></html>
